@@ -24,20 +24,6 @@ def Medicines_Recommendor(disease):
 
     return plants, parts, uses
         
-        
-st.markdown(
-    """
-    <style>
-        [theme]
-        base="light"
-        primaryColor="#79e867"
-        backgroundColor="#b4eca2"
-        secondaryBackgroundColor="#000000"
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-        
 st.title('Herbal Plants Recommended')
 
 diseases = list(set(data['Disease']))
@@ -68,7 +54,7 @@ def cards(Medicines):
                     f"""
                     
                     <div class="card" style="width : 100%;">
-                    <p style="background-color : #dedede; border-radius : 7px; padding : 20px;">
+                    <p style="border-radius : 7px; padding : 20px;">
                         <u><b>Plant name</b></u>  : {plant}.    <br>
                         <u><b>Part in Use</b></u> : {parts[i]}. <br>
                         <u><b>Dosage</b></u>      : {uses[i]}
