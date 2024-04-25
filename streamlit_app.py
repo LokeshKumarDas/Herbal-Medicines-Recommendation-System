@@ -54,7 +54,7 @@ def cards(Medicines):
                     f"""
                     
                     <div class="card" style="width : 100%;">
-                    <p style="border-radius : 7px; border-color : #dcdcdc; padding : 20px;">
+                    <p style="border-radius : 7px; border : 3px solic #dcdcdc; padding : 20px;">
                         <u><b>Plant name</b></u>  : {plant}.    <br>
                         <u><b>Part in Use</b></u> : {parts[i]}. <br>
                         <u><b>Dosage</b></u>      : {uses[i]}
