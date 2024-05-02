@@ -39,11 +39,11 @@ def Medicines_Recommendor(disease):
     return plants, scientificNames, parts, uses, images
         
         
-st.title('Herbal Plants Recommended')
+st.title('Herbal Plants Recommendor')
 
 diseases = list(set(data['Disease']))
 selected_disease_name = st.selectbox(
-    'Search For disease .... ',
+    'Search For medicines .... ',
     diseases
 )
 
