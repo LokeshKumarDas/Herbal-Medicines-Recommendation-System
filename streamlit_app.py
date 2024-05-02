@@ -11,18 +11,25 @@ def Medicines_Recommendor(disease):
     
     plants = []
     parts = []
+    scientificNames = []
     uses = []
     
     for i in range(len(data['Disease'])):
+        
         if data['Disease'][i].lower() == disease.lower():
+            
             plant = data.iloc[i][0]
-            part = data.iloc[i][1]
-            use = data.iloc[i][3]
+            scientificName = data.iloc[i][1]
+            part = data.iloc[i][2]
+            use = data.iloc[i][4]
+            
             plants.append(plant)
             parts.append(part)
+            scientificNames.append(scientificName)
             uses.append(use)
 
-    return plants, parts, uses
+    return plants, scientificNames, parts, uses
+        
         
 st.title('Herbal Plants Recommended')
 
@@ -36,8 +43,9 @@ selected_disease_name = st.selectbox(
 def cards(Medicines):
     
     plants = Medicines[0]
-    parts = Medicines[1]
-    uses = Medicines[2]
+    scientificNames = Medicines[1]
+    parts = Medicines[2]
+    uses = Medicines[3]
     
     # Create a container for the row
     row_container = st.container()
@@ -54,9 +62,10 @@ def cards(Medicines):
                     f"""
                     
                     <div class="card" style="width : 100%;">
-                    <p style="border-radius : 7px; border : 2px solid #dedede; padding : 20px;">
-                        <u><b>Plant name</b></u>  : {plant}.    <br>
-                        <u><b>Part in Use</b></u> : {parts[i]}. <br>
+                    <p style="border-radius : 7px; padding : 20px;">
+                        <u><b>Plant name</b></u>  : {plant}                      <br>
+                        <u><b>Scientific name</b></u>  : {scientificNames[i]}    <br>
+                        <u><b>Part in Use</b></u> : {parts[i]}                   <br>
                         <u><b>Dosage</b></u>      : {uses[i]}
                     <p>
                     </div>
