@@ -95,6 +95,7 @@ def cards(Medicines):
                         st.write(f'   ', unsafe_allow_html=True)
                         response = requests.get(images[i])
                         image = Image.open(BytesIO(response.content))
+                        image = image.resize((600, 400))
                         st.image(image, width=200)
                 
                 
